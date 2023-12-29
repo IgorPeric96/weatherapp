@@ -11,7 +11,7 @@ async function getWeatherForecast () {
   const API_KEY = "f496613ef21e33a3c3afa2f568f0823c";
   const LAT = 45.267136;
   const LON = 19.833549;
-  const URL = 'https://api.openweathermap.org/data/2.5/forecast?lat={LAT}&lon={LON}&appid={API_KEY}&units=metric';
+  const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&appid=${API_KEY}&units=metric`; // za formatiranje koristiti backticks "`"
   
   const response = await fetch(URL);
   const data = await response.json();
@@ -52,7 +52,7 @@ function displayWeatherData(days) {
     "Friday",
     "Saturday",
   ];
-  
+
   const boxes = document.querySelectorAll(".box");
   for(let i = 0; i < boxes.length; i++){
     const dayDisplay = boxes[i].getElementsByTagName['h3'][0];
